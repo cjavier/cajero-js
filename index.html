@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automático</title>
+    <!-- Inclusión de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Cajero Automático</h2>
+        <div class="mb-3"><h3 id="nombreUsuario"></h3></div>
+        <!-- Login -->
+        <div id="loginSection">
+            <div class="form-group">
+                <label for="usuarioDropdown">Seleccione un usuario:</label>
+                <select class="form-control" id="usuarioDropdown">
+                    <!-- Las opciones se agregarán dinámicamente desde JavaScript -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="passwordInput">Contraseña:</label>
+                <input type="password" class="form-control" id="passwordInput" placeholder="Ingrese su contraseña">
+            </div>
+            <button id="entrarBtn" class="btn btn-primary">Entrar</button>
+        </div>
+        <!-- Main Menu -->
+        <div id="mainMenu" style="display: none;">
+            <button id="consultarSaldoBtn" class="btn btn-info">Consultar Saldo</button>
+            <button id="ingresarMontoBtn" class="btn btn-success">Ingresar Monto</button>
+            <button id="retirarMontoBtn" class="btn btn-warning">Retirar Monto</button>
+        </div>
+        <!-- Consulta Saldo -->
+        <div id="consultaSaldo" style="display: none;">
+            <h3>Saldo actual: <span id="saldoActual"></span></h3>
+            <button class="btn btn-secondary" onclick="mostrarMainMenu()">Regresar</button>
+        </div>
+        <!-- Ingresar Monto -->
+        <div id="ingresarMonto" style="display: none;">
+            <input type="number" id="montoAIngresar" class="form-control" placeholder="Monto a ingresar">
+            <button id="confirmarIngresoBtn" class="btn btn-success">Confirmar Ingreso</button>
+            <button class="btn btn-secondary" onclick="mostrarMainMenu()">Regresar</button>
+        </div>
+        <!-- retirar Monto -->
+        <div id="retirarMonto" style="display: none;">
+            <input type="number" id="montoARetirar" class="form-control" placeholder="Monto a retirar">
+            <button id="confirmarRetiroBtn" class="btn btn-warning">Confirmar Retiro</button>
+            <button class="btn btn-secondary" onclick="mostrarMainMenu()">Regresar</button>
+        </div>
+    </div>
+
+    <!-- Inclusión de tu archivo JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
